@@ -2,8 +2,6 @@ import json
 import getopt, sys
 from pathlib import Path
 import sys
-import time
-import datetime
 
 
 """
@@ -42,7 +40,7 @@ if len(arguments) < 1:
 for argumentSupplied, valueSupplied in arguments:
     #cate for your options (-j or --json in this case)
     if argumentSupplied in ("-j", "--json"):
-        #use the value after the -j or --json via valueSupplied
+        #use the value after the -j or --json via valueSupplied and use Path to detect file existence
         my_json_file = Path(valueSupplied)
         if my_json_file.exists():
             print("I can use the json file here and do whatever is needed")
